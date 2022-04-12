@@ -6,7 +6,10 @@ const PagesPromotionForm = () => {
 
   return (
     <div>
-      FORM
+      {!id 
+        ? 'FORM NOVO'
+        : 'FORM EDITAR'
+      }      
       {id && <div>id: {id}</div>}
     </div>
   );

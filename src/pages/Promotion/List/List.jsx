@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PromotionCard from '../../../components/Promotion/Card/Card';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const LayoutContainer = styled.div`
         max-width: 800px;
@@ -9,7 +10,7 @@ const LayoutContainer = styled.div`
 
 const PagesPromotionList = () => {
 
-    const promotion = {
+    const promotions = {
         "id": 1,
         "title": "Kit Notebook Acer Aspire 3 + Mochila Green, A315-41-R790, AMD Ryzen 3 2200U Dual Core",
         "price": 1799,
@@ -22,6 +23,17 @@ const PagesPromotionList = () => {
           }
         ]
       };
+      
+      const [promotion, setPromotion] = useState([]);
+
+      useEffect( ()=> {
+          axios.get('http://localhost:5000/promotions?_embed=comments')
+            .then((response) =>{
+            console.log(response.data);
+            setPromotion(response.data);
+          })
+      }, []);
+
       
   return (
     <div>

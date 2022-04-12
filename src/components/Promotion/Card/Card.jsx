@@ -10,7 +10,7 @@ const PromotionCard = ({ promotion }) => (
     />
     <div className={card.promotionCardInfo}>
       <h1 className={card.promotionCardTitle}>{promotion.title}</h1>
-      <span className={card.promotionCardOrice}>R$ {promotion.price}</span>
+      <span className={card.promotionCardPrice}>R$ {promotion.price}</span>
       <footer className={card.promotionCardFooter}>
         {promotion.comments.length > 0 && (
           <div className={card.promotionCardComment}>
