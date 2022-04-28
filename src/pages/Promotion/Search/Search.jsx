@@ -1,10 +1,12 @@
 import React from 'react';
+import PromotionSearch from 'components/Promotion/Search/Search';
+import UIContainer from 'components/UI/Container/Container';
 
 const PagesPromotionSearch = () => {
   return (
-    <div>
-      <h1>Seacrh</h1>
-    </div>
+    <UIContainer>
+      <PromotionSearch />
+    </UIContainer>
   );
 };
 

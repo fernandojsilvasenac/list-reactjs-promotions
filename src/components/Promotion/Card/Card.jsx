@@ -1,8 +1,9 @@
 import React from 'react';
-import card from './card.module.css'
+import card from './Card.module.css'
 
 const PromotionCard = ({ promotion }) => (
-  <div className={card.promotionCard}>
+
+  <div className={card.promotionCard} >
     <img
       src={promotion.imageUrl}
       alt={promotion.title}
