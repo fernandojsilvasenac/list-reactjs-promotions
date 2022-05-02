@@ -6,7 +6,7 @@ function PromotionCard({promotion}) {
     return (
       <div className={card.promotionCard}>
        <img className={card.promotionCardImage}  src={promotion.imageUrl} alt={promotion.title}  />
-       <div>
+       <div className={card.promotionInfo}>
         <h1 className={card.promotionCardTitle}>{promotion.title}</h1>
         <span className={card.promotionCardPrice}>R$ {promotion.price}</span>
         <footer className={card.promotionCardFooter}>
@@ -23,7 +23,7 @@ function PromotionCard({promotion}) {
             </div>
             <a 
             href={promotion.url} 
-            target="_blank"
+            rel="noopener"
             className={card.promotionCardLink}
             >
                 IR PARA O SITE

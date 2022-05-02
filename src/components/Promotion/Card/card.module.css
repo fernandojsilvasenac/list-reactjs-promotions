@@ -13,6 +13,9 @@
     margin-right: 20px;
 }
 
+.promotionCardInfo{
+    flex-grow: 1;
+}
 .promotionCardTitle{
     font-size:16px;
     color: #2c3e50;
@@ -32,12 +35,23 @@
 .promotionCardComment{
     color:#95a5a6;
     font-weight: 700;
+    /* ***** */
+    max-width: 375px;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    overflow: hidden;
+
 }
 
 .promotionCardCommentsCount{
     margin-left: auto;
     margin-right: 20px;
     color:#3498db;
+    /* ***** */
+    background-color: unset;
+    border: unset;
+    white-space: nowrap;
+
 }
 
 .promotionCardLink {
@@ -46,4 +60,5 @@
     color:#3498db;
     text-decoration: none;
     padding: 8px 10px;
+    white-space: nowrap;
 }
