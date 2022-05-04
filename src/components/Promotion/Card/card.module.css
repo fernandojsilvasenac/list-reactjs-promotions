@@ -14,15 +14,18 @@
   .promotionCardImage {
     max-width: 100px;
     margin-right: 20px;
-  }
-  
-  .promotionCardTitle {
-    font-size: 16px;
-    color: #2C3E50;
-  }
-  
-  .promotionCardPrice {
-    font-size: 26px;
+}
+
+.promotionCardInfo{
+    flex-grow: 1;
+}
+.promotionCardTitle{
+    font-size:16px;
+    color: #2c3e50;
+}
+
+.promotionCardPrice{
+    font-size:26px;
     font-weight: 700;
     color: #3498DB;
   }
@@ -35,19 +38,30 @@
   .promotionCardComment {
     color: #95A5A6;
     font-weight: 700;
-  }
-  
-  .promotionCardCommentsCount {
+    /* ***** */
+    max-width: 375px;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.promotionCardCommentsCount{
     margin-left: auto;
     margin-right: 20px;
-    color: #3498DB;
-  }
-  
-  .promotionCardLink {
-    border: 1px solid #3498DB;
+    color:#3498db;
+    /* ***** */
+    background-color: unset;
+    border: unset;
+    white-space: nowrap;
+
+}
+
+.promotionCardLink {
+    border: 1px solid #3498db;
     border-radius: 4px;
     color: #3498DB;
     text-decoration: none;
     padding: 8px 10px;
-  }
-  
+    white-space: nowrap;
+}

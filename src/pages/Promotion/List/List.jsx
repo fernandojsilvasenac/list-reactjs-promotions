@@ -50,7 +50,7 @@ export default PagesPromotionList;
 
 =======
 import React, { useState, useEffect } from 'react';
-import PromotionCard from '../../../components/Promotion/Card/Card';
+import PromotionCard from 'components/Promotion/Card/Card';
 import axios from 'axios';
 
 const PagesPromotionList = () =>{

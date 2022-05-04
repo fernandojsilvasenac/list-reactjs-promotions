@@ -1,5 +1,6 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import PromotionSearch from 'components/Promotion/Search/Search';
 import UIContainer from 'components/UI/Container/Container';
 
@@ -15,6 +16,10 @@ export default PagesPromotionSearch;
 =======
 import PromotionSearch from '../../../components/Promotion/Search/Search';
 import UIContainer from '../../../components/UI/Container/Container';
+=======
+import PromotionSearch from 'components/Promotion/Search/Search';
+import UIContainer from 'components/UI/Container/Container';
+>>>>>>> form-edit
 
 const PagesPromotionSearch = () =>{
     return (
