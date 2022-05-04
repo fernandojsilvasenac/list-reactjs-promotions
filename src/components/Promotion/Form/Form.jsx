@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import formCss from './Form.module.css';
 
 //2
@@ -13,32 +13,47 @@ const initialValue = {
 
 
 
-const PromotionForm = () =>{
-    // const [values, setValues] = useState(id ? null: initialValue);
+const PromotionForm = ( {id}) =>{
+    // 7
+    // Se o values for null
+    const [values, setValues] = useState(id ? null: initialValue);
     //2.1
-    const [values, setValues] = useState(initialValue);
+    // const [values, setValues] = useState(initialValue);
     const navigate = useNavigate();
 
-    const { id } = useParams();
+    // const { id } = useParams();
+    //5 
+    console.log(id)
 
+    //6
+    useEffect(() => {
+        if (id) {
+          axios.get(`http://localhost:5000/promotions/${id}`)
+            .then((response) => {
+              setValues(response.data);
+            })
+        }
+      }, []);
+    
     //4
     function onSubmit(ev) {
         ev.preventDefault(); //não execute o comportamento default do form
     
-        // const method = id ? 'put' : 'post';
-        // const url = id
-        //   ? `http://localhost:5000/promotions/${id}`
-        //   : 'http://localhost:5000/promotions'
+        const method = id ? 'put' : 'post';
+        const url = id
+          ? `http://localhost:5000/promotions/${id}`
+          : 'http://localhost:5000/promotions'
     
-        // axios[method](url, values)
-        //   .then((response) => {
-        //     history.push('/');
-        //   });
-
-        axios.post('http://localhost:5000/promotions', values)
+        axios[method](url, values)
           .then((response) => {
+            // history.push('/');
             navigate('/');
           });
+
+        // axios.post('http://localhost:5000/promotions', values)
+        //   .then((response) => {
+        //     navigate('/');
+        //   });
 
     }
     
@@ -52,36 +67,39 @@ const PromotionForm = () =>{
       }
     
 
+
     return( //1 //label = id
         <div>
         <h1>Promo Show</h1>
         <h2>Nova Promoção</h2>
-        {/* {!values
+        {/* 7.1  */}
+        {!values
           ? (
             <div>Carregando...</div>
-          ) : ( */}
+          ) : (
             <form onSubmit={onSubmit}> {/** 4 colocar o onSubmit*/ }
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="title">Título</label>
-                 <input id="title" name="title" type="text"  onChange={onChange}  /> {/*value={values.title} */}
+                 <input id="title" name="title" type="text"  onChange={onChange} value={values.title} /> {/*value={values.title} */}
               </div>
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="url">Link</label>
-                <input id="url" name="url" type="text" onChange={onChange} /> {/**value={values.url}  */}
+                <input id="url" name="url" type="text" onChange={onChange} value={values.url}/> {/**value={values.url}  */}
               </div>
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="imageUrl">Imagem (URL)</label>
-                <input id="imageUrl" name="imageUrl" type="text" onChange={onChange}  /> {/**value={values.imageUrl} */}
+                <input id="imageUrl" name="imageUrl" type="text" onChange={onChange}  value={values.imageUrl}/> {/**value={values.imageUrl} */}
               </div>
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="price">Preço</label>
-                <input id="price" name="price" type="number" onChange={onChange}  /> {/**value={values.price} */}
+                <input id="price" name="price" type="number" step="any" onChange={onChange}  value={values.price}/> {/**value={values.price} */}
               </div>
-              <div>
+              <div className={formCss.promotionFormGroupBtn}>
                 <button type="submit">Salvar</button>
+                <Link to="/">Voltar</Link>
               </div>
             </form>
-          {/* )} */}
+           )} 
       </div>    )
 }
 

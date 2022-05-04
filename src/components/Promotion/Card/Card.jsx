@@ -1,5 +1,6 @@
 import React from 'react';
 import card from './card.module.css';
+import { Link } from 'react-router-dom';
 
 function PromotionCard({promotion}) {
 
@@ -28,6 +29,7 @@ function PromotionCard({promotion}) {
             >
                 IR PARA O SITE
             </a>
+            <Link to={`/edit/${promotion.id}`}>Editar</Link>
         </footer>
        </div>
       </div>
