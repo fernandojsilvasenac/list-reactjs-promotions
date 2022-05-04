@@ -2,7 +2,7 @@ import React from 'react';
 import card from './card.module.css';
 import { Link } from 'react-router-dom';
 
-const PromotionCard = ({ promotion }) => (
+function PromotionCard({promotion}) {
 
     return (
       <div className={card.promotionCard}>
