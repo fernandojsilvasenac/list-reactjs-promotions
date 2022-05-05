@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import formCss from './Form.module.css';
+import UIButton from 'components/UI/Button/Button';
 
 //2
 const initialValue = {
@@ -23,7 +24,7 @@ const PromotionForm = ( {id}) =>{
 
     // const { id } = useParams();
     //5 
-    console.log(id)
+    // console.log(id)
 
     //6
     useEffect(() => {
@@ -95,8 +96,8 @@ const PromotionForm = ( {id}) =>{
                 <input id="price" name="price" type="number" step="any" onChange={onChange}  value={values.price}/> {/**value={values.price} */}
               </div>
               <div className={formCss.promotionFormGroupBtn}>
-                <button type="submit">Salvar</button>
-                <Link to="/">Voltar</Link>
+                <UIButton type="submit" component="button">Salvar</UIButton>
+                <UIButton to="/" component={Link} theme="bordered-warning">Voltar</UIButton>
               </div>
             </form>
            )} 

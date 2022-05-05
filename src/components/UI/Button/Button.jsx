@@ -1,28 +1,28 @@
 import React from 'react';
-import formCss from './Button.module.css';
+// import button from './Button.module.css';
+import './Button.css'
+const UIButton = ({ children, className, component: Component, theme, ...restProps}) => {
 
-const UIButton = ({
-  children,
-  className
-//   component: Component,
-//   theme,
-//   ...restProps
-}) => {
+  // 1 children
+  // 2 component
+  // 3 className, criado para passar parâmetro para o margin-left e/ou outras propriedades css
+  // 3.1 tirar o margin-left do css
+  // 3.2 defaultProps
+  // 4 ...restProps propriedades geral do component que vier por parâmetro, por exemplo <a href></a>, button
+  // Button Nova promoção no Search
+  // Button Salvar no Form 
+  // 5 theme
   return (
-    // <Component
-    //   className={`ui-button ui-button--${theme} ${className}`}
-    //   {...restProps}
-    // >
-
-      {children}
-    // </Component>
+      <Component className={`uiButton uiButton--${theme} ${className}`} {...restProps}>
+        {children}
+      </Component>
   );
 };
 
 UIButton.defaultProps = {
-  component: 'a',
+  Component:'a',
   className: '',
-  theme: 'bordered-blue',
+  theme: 'bordered-primary',
 };
 
 export default UIButton;
