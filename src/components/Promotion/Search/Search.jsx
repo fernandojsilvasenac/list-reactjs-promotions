@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import PromotionCard from 'components/Promotion/Card/Card';
+import PromotionList from '../List/List';
 import { Link } from 'react-router-dom';
+import UIButton from 'components/UI/Button/Button';
 import searchCss from './Search.module.css';
 
 const PromotionSearch = () => {
@@ -16,7 +17,7 @@ const PromotionSearch = () => {
        }
       
 
-      axios.get('http://localhost:5000/promotions?_embed=comments', { params })
+      axios.get('https://apifake-jsonserver.herokuapp.com/promotions?_embed=comments', { params })
       .then(
         (response) => {
             setPromotions(response.data);
@@ -31,7 +32,7 @@ const PromotionSearch = () => {
         <>
           <header className={searchCss.promotionSearchHeader}>
             <h1>Promo Show</h1>
-            <Link to="/create">Nova Promoção</Link>
+            <UIButton to="/create" component={Link} theme="contained-success">Nova Promoção</UIButton>
           </header>
           <input 
             type="search"
@@ -40,11 +41,12 @@ const PromotionSearch = () => {
             value={search}
             onChange={(ev) => setSearch(ev.target.value)}
           />
-          {promotions.map( (promotions) => (
+          {/* {promotions.map( (promotions) => (
               <PromotionCard promotion={promotions} key={promotions.id}/>
             )
             )
-          } 
+          }  */}
+          <PromotionList promotions={promotions} loading={!promotions.length}/>
         </>
     )
 }

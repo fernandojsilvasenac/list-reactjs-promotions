@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import formCss from './Form.module.css';
+import UIButton from 'components/UI/Button/Button';
 
 //2
 const initialValue = {
@@ -23,12 +24,12 @@ const PromotionForm = ( {id}) =>{
 
     // const { id } = useParams();
     //5 
-    console.log(id)
+    // console.log(id)
 
     //6
     useEffect(() => {
         if (id) {
-          axios.get(`http://localhost:5000/promotions/${id}`)
+          axios.get(`https://apifake-jsonserver.herokuapp.com/promotions/${id}`)
             .then((response) => {
               setValues(response.data);
             })
@@ -41,8 +42,8 @@ const PromotionForm = ( {id}) =>{
     
         const method = id ? 'put' : 'post';
         const url = id
-          ? `http://localhost:5000/promotions/${id}`
-          : 'http://localhost:5000/promotions'
+          ? `https://apifake-jsonserver.herokuapp.com/promotions/${id}`
+          : 'https://apifake-jsonserver.herokuapp.com/promotions'
     
         axios[method](url, values)
           .then((response) => {
@@ -95,8 +96,8 @@ const PromotionForm = ( {id}) =>{
                 <input id="price" name="price" type="number" step="any" onChange={onChange}  value={values.price}/> {/**value={values.price} */}
               </div>
               <div className={formCss.promotionFormGroupBtn}>
-                <button type="submit">Salvar</button>
-                <Link to="/">Voltar</Link>
+                <UIButton type="submit" component="button">Salvar</UIButton>
+                <UIButton to="/" component={Link} theme="bordered-warning">Voltar</UIButton>
               </div>
             </form>
            )} 
