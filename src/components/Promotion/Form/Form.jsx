@@ -28,7 +28,7 @@ const PromotionForm = ( {id}) =>{
     //6
     useEffect(() => {
         if (id) {
-          axios.get(`http://localhost:5000/promotions/${id}`)
+          axios.get(`https://apifake-jsonserver.herokuapp.com/promotions/${id}`)
             .then((response) => {
               setValues(response.data);
             })
@@ -41,8 +41,8 @@ const PromotionForm = ( {id}) =>{
     
         const method = id ? 'put' : 'post';
         const url = id
-          ? `http://localhost:5000/promotions/${id}`
-          : 'http://localhost:5000/promotions'
+          ? `https://apifake-jsonserver.herokuapp.com/promotions/${id}`
+          : 'https://apifake-jsonserver.herokuapp.com/promotions'
     
         axios[method](url, values)
           .then((response) => {
