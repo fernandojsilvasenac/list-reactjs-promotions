@@ -18,6 +18,7 @@ const PromotionForm = ( {id}) =>{
     // 7
     // Se o values for null
     const [values, setValues] = useState(id ? null: initialValue);
+    const [acao, setAcao] = useState('Nova');
     //2.1
     // const [values, setValues] = useState(initialValue);
     const navigate = useNavigate();
@@ -32,6 +33,7 @@ const PromotionForm = ( {id}) =>{
           axios.get(`https://apifake-jsonserver.herokuapp.com/promotions/${id}`)
             .then((response) => {
               setValues(response.data);
+              setAcao('Editar')
             })
         }
       }, []);
@@ -67,18 +69,40 @@ const PromotionForm = ( {id}) =>{
         setValues({ ...values, [name]: value });
       }
     
-
+    function renderBtn(values) {
+      console.log(values);
+      if (values == initialValue){
+        return(
+          <div className={formCss.promotionFormGroupBtn}>
+          <UIButton type="submit" component="button" theme="contained-primary">Salvar</UIButton>
+          <UIButton to="/" component={Link} theme="contained-warning" >Candelar</UIButton>
+          </div>
+        )
+      } else {
+        return(
+          <div className={formCss.promotionFormGroupBtn}>
+          <UIButton type="submit" component="button" >Salvar</UIButton>
+          <UIButton to="/" component={Link} theme="bordered-warning" >Candelar</UIButton>
+          </div>
+        )
+      }
+    }
 
     return( //1 //label = id
         <div>
-        <h1>Promo Show</h1>
-        <h2>Nova Promoção</h2>
+        <h1>Buscapé Promoções</h1>
+        <h2>{acao} Promoção</h2>
         {/* 7.1  */}
         {!values
           ? (
             <div>Carregando...</div>
-          ) : (
+            ) : (
+            <div>
+              <div>
+                <img className={formCss.promotionImage}  src={values.imageUrl} alt={values.title}  />
+              </div>
             <form onSubmit={onSubmit}> {/** 4 colocar o onSubmit*/ }
+              
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="title">Título</label>
                  <input id="title" name="title" type="text"  onChange={onChange} value={values.title} /> {/*value={values.title} */}
@@ -95,13 +119,12 @@ const PromotionForm = ( {id}) =>{
                 <label htmlFor="price">Preço</label>
                 <input id="price" name="price" type="number" step="any" onChange={onChange}  value={values.price}/> {/**value={values.price} */}
               </div>
-              <div className={formCss.promotionFormGroupBtn}>
-                <UIButton type="submit" component="button">Salvar</UIButton>
-                <UIButton to="/" component={Link} theme="bordered-warning">Voltar</UIButton>
-              </div>
+                {renderBtn(values)}
             </form>
+            </div>
            )} 
-      </div>    )
+      </div>    
+      )
 }
 
 export default PromotionForm;
