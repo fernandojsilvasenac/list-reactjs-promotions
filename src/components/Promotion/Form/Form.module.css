@@ -25,3 +25,8 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .promotionImage{
+    max-width: 100px;
+    margin-right: 20px;
+  }

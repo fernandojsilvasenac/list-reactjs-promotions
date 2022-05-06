@@ -31,7 +31,7 @@ const PromotionSearch = () => {
     return (
         <>
           <header className={searchCss.promotionSearchHeader}>
-            <h1>Promo Show</h1>
+            <h1>Buscapé Promoções</h1>
             <UIButton to="/create" component={Link} theme="contained-success">Nova Promoção</UIButton>
           </header>
           <input 
