@@ -30,6 +30,7 @@
 .promotionCardFooter{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .promotionCardComment{
@@ -74,4 +75,9 @@
 
 .promotionCardButton {
     margin-left: 10px;
+}
+
+.promotionCardButtonDelete{
+    border: unset;
+    background-color:unset;
 }

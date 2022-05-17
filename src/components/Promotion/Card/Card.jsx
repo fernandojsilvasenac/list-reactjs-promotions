@@ -2,9 +2,9 @@ import React from 'react';
 import card from './card.module.css';
 import { Link } from 'react-router-dom';
 import UIButton from 'components/UI/Button/Button';
+import { Trash } from "phosphor-react";
 
-
-function PromotionCard({promotion}) {
+function PromotionCard({promotion, onClickDelete}) {
 
     return (
       <div className={card.promotionCard}>
@@ -39,6 +39,11 @@ function PromotionCard({promotion}) {
             >
                 Editar
             </UIButton>
+            <button type="button" 
+                className={card.promotionCardButtonDelete}
+                onClick={onClickDelete}>
+                <Trash size={16} />
+            </button>
         </footer>
        </div>
       </div>

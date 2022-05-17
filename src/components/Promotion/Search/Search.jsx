@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import searchCss from './Search.module.css';
-import axios from 'axios';
+import api  from 'services/api';
 import PromotionList from '../List/List';
 import { Link } from 'react-router-dom';
 import UIButton from 'components/UI/Button/Button';
@@ -18,7 +18,7 @@ const PromotionSearch = () =>{
        }
       
 
-      axios.get('https://apifake-jsonserver.herokuapp.com/promotions?_embed=comments', { params })
+      api.get('/promotions?_embed=comments', { params })
       .then(
         (response) => {
             setPromotions(response.data);
@@ -47,7 +47,7 @@ const PromotionSearch = () =>{
             )
             )
           }  */}
-          <PromotionList promotions={promotions} loading={!promotions.length}/>
+          <PromotionList promotions={promotions} loading={!promotions.length} />
         </>
     )
 }

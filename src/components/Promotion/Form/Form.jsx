@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import api  from 'services/api';
+import { useNavigate, Link } from 'react-router-dom';
 import formCss from './Form.module.css';
 import UIButton from 'components/UI/Button/Button';
 
@@ -30,7 +30,7 @@ const PromotionForm = ( {id}) =>{
     //6
     useEffect(() => {
         if (id) {
-          axios.get(`https://apifake-jsonserver.herokuapp.com/promotions/${id}`)
+          api.get(`/promotions/${id}`)
             .then((response) => {
               setValues(response.data);
               setAcao('Editar')
@@ -44,10 +44,10 @@ const PromotionForm = ( {id}) =>{
     
         const method = id ? 'put' : 'post';
         const url = id
-          ? `https://apifake-jsonserver.herokuapp.com/promotions/${id}`
-          : 'https://apifake-jsonserver.herokuapp.com/promotions'
+          ? `/promotions/${id}`
+          : '/promotions'
     
-        axios[method](url, values)
+        api[method](url, values)
           .then((response) => {
             // history.push('/');
             navigate('/');
@@ -60,7 +60,7 @@ const PromotionForm = ( {id}) =>{
 
     }
     
-      //3 em mudança...
+    //3 em mudança...
     //   console.log(values)
       function onChange(ev) {
         const { name, value } = ev.target;
