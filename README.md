@@ -17,40 +17,30 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-# Lista de Promoções
+# Buscapé, Produtos em Promoções
 
 Um listagem de produtos em promoções em ReactJS, utilizando uma API fake com JSON Server
-
-
-
 
 ## Documentação da API
 
 #### Retorna todos os itens
 
 ```http
-  GET /localhost:5000/?_embed=comments
+  GET http://localhost:5005/promotions?_embed=comments
 ```
-
 
 ## Instalação
 
-Crie um diretório:
-```
-mkdir apifake
-cd apifake
-```
-Rode o comando abaixo com o nodejs instalado na máquina
-```
-npm init
-```
-Instale com npm
-
 ```bash
-  npm install -g json-server
+  npm install json-server
+  yarn add json-server
 ```
-Crie um arquivo db.json    
+  
 ```
+Crie um arquivo server.json    
+```
+
+```server.json
 [
   {
     "id": 1,
@@ -101,20 +91,20 @@ Crie um arquivo db.json
 Adicione no arquivo package json em scripts:
 ```
 "scripts": {
-    "start": "json-server --watch db.json --port 5000 delay=5000"
+    "server": "json-server --watch server.json --port 5005 delay=5000"
   },
 ```
 Para rodar a api use o comando:
 ```
-npm start
+npm run server
 ```
 Aparecerá o seguinte resultado:
 
 ```
-$npm start
+
 
 > apifake@1.0.0 start
-> json-server --watch db.json --port 5000 delay=5000
+> json-server --watch server.json --port 5005 delay=5000
 
 
   \{^_^}/ hi!
@@ -123,11 +113,11 @@ $npm start
   Done
 
   Resources
-  http://localhost:5000/promotions
-  http://localhost:5000/comments
+  http://localhost:5005/promotions
+  http://localhost:5005/comments
 
   Home
-  http://localhost:5000
+  http://localhost:5005
 
   Type s + enter at any time to create a snapshot of the database
   Watching...
