@@ -39,6 +39,8 @@ Um listagem de produtos em promoções em ReactJS, utilizando uma API fake com J
 ```
 Crie um arquivo server.json    
 ```
+
+```server.json
 [
   {
     "id": 1,
