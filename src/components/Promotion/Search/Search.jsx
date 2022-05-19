@@ -47,7 +47,7 @@ const PromotionSearch = () =>{
             )
             )
           }  */}
-          <PromotionList promotions={promotions} loading={!promotions.length} />
+          <PromotionList searchPromotion={search} loading={!promotions.length} />
         </>
     )
 }

@@ -1,21 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PromotionCard from '../Card/Card';
 import list from './List.module.css'
 import api  from 'services/api';
 
-import { useNavigate } from 'react-router-dom';
+const PromotionList = ({loading, searchPromotion }) =>{
+    const [promotions, setPromotions] = useState([]);
 
-const PromotionList = ({loading, promotions }) =>{
-    const navigate = useNavigate();
+    useEffect( () => {
+       const params = {};
+       if (searchPromotion) {
+         params.title_like = searchPromotion;
+       }
+      
+
+      api.get('/promotions?_embed=comments', { params })
+      .then(
+        (response) => {
+            setPromotions(response.data);
+        }
+      );
+
+
+    }, [] );    
 
     function onDelete(id) {
 
+      setPromotions(promotions.filter((item) => item.id !== id));
       const method = 'delete';
       const url = `/promotions/${id}`;
       api[method](url)
-        .then((response) => {
-          navigate('/');
-        });
+        .then((response) => {});
   
     }
 
