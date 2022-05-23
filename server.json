@@ -1,5 +1,5 @@
 {
-"promotions": [
+  "promotions": [
     {
       "id": 1,
       "title": "Kit Notebook Acer Aspire 3 + Mochila Green, A315-41-R790, AMD Ryzen 3 2200U Dual Core",
@@ -8,38 +8,25 @@
       "url": ""
     },
     {
-      "id": 2,
-      "title": "Faqueiro Tramontina Laguna Inox - 100 Peças",
-      "price": 246.05,
-      "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem/0324bf9ad81ccbc5a8e22a1a41015649.png",
-      "url": ""
+      "title": "Notebook Lenovo V14 I3-1115g4 4gb 128gb Ssd W11 Home 14 Hd 82nm000xbr Preto",
+      "url": "https://www.submarino.com.br/produto/4601366964?=&utm_medium=afiliados&utm_source=aflb2w&utm_campaign=marca%3Asuba%3Bmidia%3Aafiliados%3Bformato%3A00%3Bsubformato%3A00%3Bidcampanha%3Asuba%3Bfranq%3A22195_1653328401_3c7c2cc0c703357a5e81d4bc0c0dab4f&utm_content=22195_1653328401_3c7c2cc0c703357a5e81d4bc0c0dab4f&epar=AF_00_00_AB_SUBA&opn=COMPARADORESSUB&franq=22195_1653328401_3c7c2cc0c703357a5e81d4bc0c0dab4f&cor=Preto",
+      "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem/37c855690f4075ef8b612fb5e71bb0f9.jpg",
+      "price": "2267.01",
+      "id": 5
     },
     {
-      "id": 3,
-      "title": "Tênis West Coast Marrom",
-      "price": 119.99,
-      "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem/fe0a1e4ddcbd8f9a99a05908b6d29ea2.png",
-      "url": ""
-    },
-    {
-      "id": 4,
-      "title": "Fone de Ouvido Jaybird Run XT Sport Bluetooth, Cinza",
-      "price": 699.90,
-      "imageUrl": "https://m.media-amazon.com/images/I/61AcdWphNAL._AC_SL1500_.jpg",
-      "url": "https://www.amazon.com.br/Fones-ouvido-sem-Jaybird-True/dp/B07MSLF5YC/ref=sr_1_12?adgrpid=109582876200&gclid=EAIaIQobChMIrv2Pi7eO9wIVxkFIAB0OsQJfEAAYASAAEgId7vD_BwE&hvadid=558205721239&hvdev=c&hvlocphy=1001729&hvnetw=g&hvqmt=b&hvrand=13840515130688526441&hvtargid=kwd-50609578124&hydadcr=21569_13302156&keywords=jaybird+x&qid=1649763460&sr=8-12&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+      "title": "Smartphone Samsung Galaxy S20 Fe 128GB 4G Wi-Fi Tela 6.5'' Dual Chip 6GB RAM Câmera",
+      "url": "https://www.awin1.com/cread.php?awinmid=22193&awinaffid=904991&ued=https%3A%2F%2Fwww.americanas.com.br%2Fproduto%2F3234381133",
+      "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem/1972baa3ea205ba126db6cb3582d103d.jpg",
+      "price": "1769.11",
+      "id": 6
     }
   ],
-    "comments": [
-      {
-        "id": 1,
-        "comment": "TELA HD",
-        "promotionId": 1
-      },
-      {
-        "id": 2,
-        "comment": "de R$ 599,90 \n por R$246,05à vista \n (5% de desconto) \n ou R$ 259,00 em 5x de R$ 51,80 sem juros",
-        "promotionId": 2
-      }
-    ]
-  
+  "comments": [
+    {
+      "id": 1,
+      "comment": "TELA HD",
+      "promotionId": 1
+    }
+  ]
 }

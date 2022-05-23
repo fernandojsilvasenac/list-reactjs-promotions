@@ -42,7 +42,7 @@ function PromotionCard({promotion, onClickDelete}) {
             <button type="button" 
                 className={card.promotionCardButtonDelete}
                 onClick={onClickDelete}>
-                <Trash size={16} />
+                <Trash size={16} color="#ff0000" weight="duotone" />
             </button>
         </footer>
        </div>
